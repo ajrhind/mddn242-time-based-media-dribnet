@@ -33,6 +33,13 @@ function draw_clock(obj) {
   ellipse(width / 2, 350, minutes);
   
   fill(175, 133, 255); // purple
-  ellipse(width / 3 * 2, 350, secondSize);
+  
+  let bounce = map(mills,0,1000,0,PI);
+  let phase = sin(bounce);
+  let yMove = map(phase,-1,1,100,400);
+  
+  ellipse(width / 3 * 2,yMove, 100);
+
+
 
 }
