@@ -24,6 +24,8 @@ let size = 100
 let hours = obj.hours
 let minutes = obj.minutes
 let seconds = obj.seconds
+let hRotate = map(hours,0,360,0,23);
+let mRotate = 6;
 var sMap = map(obj.seconds, 0, 59, 50 ,450);
 var mMap = map(obj.minutes ,0,59,50,450);
 var hMap = map(obj.hours,0,23,50,450);
@@ -33,13 +35,19 @@ var sColour = map(obj.seconds,0,59,100,255);
 
 textSize(30);
 
-// for(i=0;i<23;i++){
+// // for(i=0;i<23;i++){
 fill(100,100,hColour);
-  text(hours,midX-200,hMap);//hours
-// }for(i=0;i<59;i++){
-fill(100,mColour,100);
-  text(minutes,midX,mMap);
-fill(sColour,100,100);
-  text(seconds,midX+200,sMap);
+//   text(hours,midX-200,hMap);//hours
+// // }for(i=0;i<59;i++){
+// fill(100,mColour,100);
+//   text(minutes,midX,mMap);
+// fill(sColour,100,100);
+//   text(seconds,midX+200,sMap);
+
+
+textSize(50);
+rotate(hRotate);
+text(hours,midX,midY);
+
 
 }
